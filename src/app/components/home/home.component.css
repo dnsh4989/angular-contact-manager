@@ -1,0 +1,89 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.header{
+	color: #fff;
+	position: fixed;
+    background: #000;
+    height: 53px;
+}
+.logo{
+	display: inline;
+    width: 30px;
+    margin-top: -8px;
+}
+.head{
+	padding-top: 15px;
+    padding-left: 25px;
+}
+.head-btn{
+	color: #fff;
+    font-size: 18px;
+    padding-right: 65px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.group-body{
+    margin-top: 100px;
+}
+.topbar{
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+.group-name{
+    margin: 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.contact-cards{
+    height: 175px;
+}
+.thumbnail{
+    height: 90%;
+}
+.userPic{
+    width: 25px;
+    margin-bottom: 5px;
+    margin-right: 8px;
+    background-color: #c56666;
+    border-radius: 22px;
+}
+.user_name{
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.elivate{
+    color: #c56666;
+}
+.addGroup{
+    cursor: pointer;
+}
+#blocker{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(11,11,11,0.5);
+    top: 0;
+    z-index: 11;
+}
+.edit-btn{
+    cursor: pointer;
+}
+.greenBox{
+    display: inline;
+    padding: 5px;
+    background: #23a523;
+}
+.redBox{
+    display: inline;
+    padding: 5px;
+    background: #ff7b7b;
+}
+@media only screen and (max-width: 600px) {
+  .search-inpt {
+    width: 100%;
+  }
+}

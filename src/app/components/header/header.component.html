@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12 header">
+      <div class="head">
+        <img style="cursor: pointer;" class="logo" src="/assets/logo.svg" routerLink="/home">
+        <h3 style="cursor: pointer;" class="org" routerLink="/home">CONTACT MANAGER</h3>
+        <span class="pull-right">
+          <img *ngIf="user" class="userPic" src="/assets/user.png" />
+          <span *ngIf="user" class="user_name">{{user.name}}</span>
+          <a  (click)="signOut();" class="head-btn">logout</a>
+        </span>
+      </div>
+  </div>
+</div>

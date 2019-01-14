@@ -1,0 +1,10 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.form-control{
+	margin: 0px !important;
+    width: 90% !important;
+    z-index: 999 !important;
+}
+.modal{
+	overflow: inherit !important;
+	z-index: 12 !important;
+}

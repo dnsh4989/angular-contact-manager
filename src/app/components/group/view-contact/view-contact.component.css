@@ -1,0 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.modal{
+	overflow: inherit !important;
+	z-index: 12 !important;
+}

@@ -1,0 +1,64 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.loginBox{
+	height: 500px;
+	margin: 100px auto;
+    background-image: url('/assets/2.png');
+    background-repeat: repeat;
+    color: #fff;
+    padding-top: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.mainBox{
+	background-image: url('/assets/1.jpg');
+	background-position: center;
+}
+.login-form{
+	margin-top: -50px;
+}
+.login-submit{
+	background: #ffc312 !important;
+	padding-left: 21px;
+    padding-right: 21px;
+    color: #000;
+}
+.username-input{
+	background-color : #fff;
+}
+.input-group-text{
+	background: #ffc312;
+	font-size: 24px;
+	color: #000;
+}
+.input-group-prepend{
+	position: relative;
+    top: 34px;
+    z-index: 4;
+}
+.remember{
+	padding-left: 15px;
+}
+.form-control{
+	margin-left: 41px !important;
+    width: 90% !important;
+    z-index: 9 !important;
+}
+.header{
+	color: #fff;
+	position: fixed;
+}
+.logo{
+	display: inline;
+    width: 30px;
+    margin-top: -8px;
+}
+.head{
+	padding-top: 15px;
+    padding-left: 25px;
+}
+.head-btn{
+	color: #fff;
+    font-size: 18px;
+    padding-right: 65px;
+    padding-top: 5px;
+}

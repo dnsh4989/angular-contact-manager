@@ -1,0 +1,45 @@
+
+  <div id="myModal" class="modal" role="dialog" (click)="closeModal($event);" style="display: block; position: absolute;">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: #c56666; font-weight: bold;">Edit Group</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form class="edit-form">
+            <div class="input-group form-group" >
+              <label>name:</label>
+              <input name="abc1" [(ngModel)]="name" type="text" class="form-control" placeholder="group name">
+            </div>
+            <div class="input-group form-group">
+              <label>description:</label>
+              <input name="abc2" [(ngModel)]="description" type="text" class="form-control" placeholder="description">
+            </div>
+
+            <br/>
+
+            <div class="row">
+              <label class="col-md-4 col-xs-4 col-sm-4">status:</label>
+              <select class="col-md-8" value="active" name="abc2" [(ngModel)]="status" class="">
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+              </select>
+            </div>
+
+            <br/>
+            <br/>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Close" class="btn float-right" (click)="close();" style="margin-left: 10px;">
+          <input type="submit" value="Save" class="btn float-right" (click)="editGroup();">
+          <input type="submit" value="Delete" class="btn float-right " style="margin-right: 10px;" (click)="deleteGroup();">
+        </div>
+      </div>
+
+    </div>
+  </div>

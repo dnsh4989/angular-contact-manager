@@ -1,0 +1,51 @@
+
+  <div id="myModal" class="modal" (click)="closeModal($event);" role="dialog" style="display: block; position: absolute;">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: #c56666; font-weight: bold;">Add Contact</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form class="add-form">
+            <div class="input-group form-group" >
+              <input name="abc1" [(ngModel)]="name" type="text" class="form-control username-input" placeholder="name">
+            </div>
+            <div class="input-group form-group">
+              <input name="abc2" [(ngModel)]="designation" type="text" class="form-control" placeholder="designation">
+            </div>
+            <div class="input-group form-group">
+              <input name="abc2" [(ngModel)]="email" type="text" class="form-control" placeholder="email">
+            </div>
+            <div class="input-group form-group">
+              <input name="abc2" [(ngModel)]="age" type="number" class="form-control" placeholder="age">
+            </div>
+            <div class="input-group form-group">
+              <input name="abc2" [(ngModel)]="phone_number" type="number" class="form-control" placeholder="phone number">
+            </div>
+
+            <br/>
+
+            <div class="row">
+              <label class="col-md-4 col-xs-4 col-sm-4">status:</label>
+              <select class="col-md-8" value="active" name="abc2" [(ngModel)]="status" class="">
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+              </select>
+            </div>
+
+            <br/>
+            <br/>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Close" class="btn float-right" (click)="close();" style="margin-left: 10px;">
+          <input type="submit" value="Add Contact" class="btn float-right" (click)="addContact();">
+        </div>
+      </div>
+
+    </div>
+  </div>

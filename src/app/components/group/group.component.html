@@ -1,0 +1,116 @@
+<div class="container-fluid mainBox">
+  <app-header></app-header>
+  <div class="container group-body">
+    <div class="col-md-12" style="text-align: center;">
+      <h1>{{groupName}}</h1>
+      <p>{{description}}</p>
+    </div>
+    <br>
+    <h3 style="color: #c56666; font-weight: bold;">contacts:</h3>
+    <div class="container">
+      <div class="col-md-12 topbar">
+        <span (click)="addContact();" style="cursor: pointer;"><i class="glyphicon glyphicon-plus"></i> Add Contact</span>
+        <input class="pull-right search-inpt" type="text" name="search" [(ngModel)]="searchKey" (ngModelChange)="search();" placeholder="search contact name" style="margin-bottom: 5px;">
+      </div>
+    </div>
+    
+    <div class="col-sm-6 col-md-3 contact-cards" *ngFor="let contact of currentContacts;">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3 class="contact-name" (click)="viewContact(contact);">{{contact.contact_name}}</h3>
+          <p>{{contact.designation}}</p>
+          <div *ngIf="contact.status" style="position: absolute;">
+            Status: 
+            <div *ngIf="contact.status == 'active'" class="greenBox">ACTIVE</div> 
+            <div *ngIf="contact.status == 'inactive'" class="redBox">INACTIVE</div>
+          </div>
+          <div class="edit-btn pull-right" (click)="editContact(contact);">
+              <span class="glyphicon glyphicon-edit"></span>
+              EDIT
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="currentContacts.length == 0">
+      <h4>No Contacts Added..</h4>
+    </div>
+
+    <div class="container">
+      <div class="col-md-12">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li (click)="paginate(pageIndex-1)">
+                <a aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <li 
+              *ngFor="let pageNumber of currentPages" 
+              [ngClass]="{'active': (pageIndex===pageNumber), 'pageNumbers':true}">
+                <a (click)="paginate(pageNumber);">{{pageNumber}}</a>
+            </li>
+
+            <li (click)="paginate(pageIndex+1)">
+                <a aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+          </ul>
+        </nav>
+        <span>
+          <span>
+            
+          </span>
+          <div *ngIf="(contacts && (contacts.length<pageCount));else else_content">
+              <p>displaying {{contacts.length}} of {{contacts.length}}</p>
+          </div>
+          
+          display per page count: <input style="width: 60px;" type="number"[(ngModel)]="count" min="3" max="20"  name="pageCount" > &nbsp; &nbsp; <button (click)="setCount();">set</button>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="blocker" *ngIf="showModal"></div>
+
+<ng-template #else_content><p>displaying {{currentContacts.length}} of <span *ngIf="contacts">{{contacts.length}}</span></p>...</ng-template>
+
+<app-add-contact 
+  (clickedOutside)="closeModal();"
+  [gid]="gid" 
+  *ngIf="showAddModal"
+  (added)="contactAdded();">
+</app-add-contact>
+
+
+<app-edit-contact 
+  (clickedOutside)="closeModal();"
+  (edited)="contactEdited();"
+  (deleted)="contactDeleted();"
+  [gid]="gid" 
+  [cid]="currentContactId" 
+  [name]="contactName" 
+  [designation]="designation"
+  [email]="email" 
+  [age]="age" 
+  [phone_number]="phone_number"  
+  [status]="status"  
+  *ngIf="showEditModal">
+</app-edit-contact>
+
+
+<app-view-contact 
+  (clickedOutside)="closeModal();"
+  [name]="contactName" 
+  [designation]="designation" 
+  [email]="email" 
+  [age]="age" 
+  [phone_number]="phone_number" 
+  [status]="status" 
+  *ngIf="showViewModal">
+  </app-view-contact>

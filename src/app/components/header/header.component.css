@@ -1,0 +1,49 @@
+.header{
+	color: #fff;
+	position: fixed;
+    background: #000;
+    height: 53px;
+    z-index: 9;
+}
+.logo{
+	display: inline;
+    width: 30px;
+    margin-top: -8px;
+}
+.head{
+	padding-top: 15px;
+    padding-left: 25px;
+}
+.head-btn{
+	color: #fff;
+    font-size: 18px;
+    padding-right: 65px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.userPic{
+    width: 25px;
+    margin-bottom: 5px;
+    margin-right: 8px;
+    background-color: #c56666;
+    border-radius: 22px;
+}
+.user_name{
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.org{
+    display: inline;
+}
+
+/* On screens that are 715px or less, set the background color to olive */
+@media screen and (max-width: 715px) {
+  .org {
+    display: none;
+  }
+  .logo{
+    margin-top: -2px;
+    margin-left: -25px;
+  }
+}

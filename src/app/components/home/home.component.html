@@ -1,0 +1,104 @@
+<div class="container-fluid mainBox">
+  
+  <app-header></app-header>
+
+  <div class="container group-body">
+    <div class="col-md-12">
+      <h2>List of all <span class="elivate">Contact Groups</span></h2>
+    </div>
+
+    <div class="container">
+      <div class="col-md-12 topbar">
+        <span class="addGroup" (click)="addGroup();"><i class="glyphicon glyphicon-plus"></i> Add Group</span>
+        <input class="pull-right search-inpt" type="text" name="search" placeholder="search group name" [(ngModel)]="searchKey" (ngModelChange)="search();">
+      </div>
+    </div>
+    
+    <div *ngIf="groups">
+      <div class="col-xl-12 col-sm-12 col-md-4 col-ls-4 contact-cards" *ngFor="let group of currentGroups;">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3 class="group-name" (click)="goToGroup(group.id);">{{group.group_name}}</h3>
+            <p><b>Description:</b> {{group.description}}</p>
+            <div *ngIf="group.status" style="position: absolute;">
+              Status: 
+              <div *ngIf="group.status == 'active'" class="greenBox">ACTIVE</div> 
+              <div *ngIf="group.status == 'inactive'" class="redBox">INACTIVE</div>
+            </div>
+            <div class="edit-btn pull-right" (click)="editGroup(group);">
+                <span class="glyphicon glyphicon-edit"></span>
+                EDIT
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="currentGroups.length == 0">
+      <h4>No Groups Added..</h4>
+    </div>
+    
+  </div>
+
+  <div class="container">
+    <div class="col-md-12">
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li (click)="paginate(pageIndex-1)">
+              <a aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+
+          <li 
+            *ngFor="let pageNumber of currentPages" 
+            [ngClass]="{'active': (pageIndex===pageNumber), 'pageNumbers':true}">
+              <a (click)="paginate(pageNumber);">{{pageNumber}}</a>
+          </li>
+
+          <li (click)="paginate(pageIndex+1)">
+              <a aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+        </ul>
+      </nav>
+      <span>
+        <span>
+          
+        </span>
+        <div *ngIf="(groups && (groups.length<pageCount));else else_content">
+            <p>displaying {{groups.length}} of {{groups.length}}</p>
+        </div>
+        
+        display per page count: <input style="width: 60px;" type="number"[(ngModel)]="count" min="3" max="20"  name="pageCount" > &nbsp; &nbsp; <button (click)="setCount();">set</button>
+      </span>
+    </div>
+  </div>
+
+  
+
+</div>
+
+<div id="blocker" *ngIf="showModal">
+</div>
+
+
+<ng-template #else_content><p>displaying {{currentGroups.length}} of <span *ngIf="groups">{{groups.length}}</span></p>...</ng-template>
+
+<app-add-group 
+  (clickedOutside)="closeModal();"
+  (added)="groupAdded();"
+  *ngIf="showAddGroup">
+</app-add-group>
+
+<app-edit-group 
+  (clickedOutside)="closeModal();"
+  (edited)="groupEdited();"
+  (deleted)="groupDeleted();"
+  [name]="currentGroup.group_name" 
+  [gid]="currentGroup.id" 
+  [description]="currentGroup.description" 
+  [status]="currentGroup.status" 
+  *ngIf="showEditGroup">
+</app-edit-group>

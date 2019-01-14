@@ -1,0 +1,51 @@
+<div class="container-fluid mainBox">
+  <div class="row">
+    <div class="col-md-12 header">
+        <div class="head">
+          <img class="logo" src="/assets/logo.svg">
+          <h3 style="display: inline;">CONTACT MANAGER</h3>
+          <a href="/login" class="pull-right head-btn">Sign in</a>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-8 col-xs-10 loginBox">
+      <h2 style="margin-top: 45px;">Regester new user</h2>
+      <form class="login-form">
+          <div class="input-group form-group" style="top: 30px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="glyphicon glyphicon-pencil"></i></span>
+            </div>
+            <input type="text" class="form-control username-input" name="sd" [(ngModel)]="name" placeholder="name">
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="glyphicon glyphicon-edit"></i></span>
+            </div>
+            <input type="text" class="form-control username-input" name="sd" [(ngModel)]="designation" placeholder="designation">
+          </div>
+          <div class="input-group form-group" style="top: -25px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="glyphicon glyphicon-font"></i></span>
+            </div>
+            <input type="number" maxlength="10" class="form-control username-input" [(ngModel)]="phone_number" name="sd" placeholder="phone number">
+          </div>
+          <div class="input-group form-group" style="top: -55px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="glyphicon glyphicon-user"></i></span>
+            </div>
+            <input type="text" name="abc" [(ngModel)]="email" class="form-control" placeholder="email">
+          </div>
+          <div class="input-group form-group" style="top: -90px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="glyphicon glyphicon-lock"></i></span>
+            </div>
+            <input type="password" name="abc" [(ngModel)]="pass" class="form-control" placeholder="password">
+          </div>
+          <div class="form-group" style="margin-top: -60px;">
+            <input type="submit" value="Signup" class="btn login_btn login-submit" (click)="signUp();">
+          </div>
+        </form>
+    </div>
+  </div>
+</div>

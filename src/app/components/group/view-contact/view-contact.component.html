@@ -1,0 +1,42 @@
+
+  <div id="myModal" class="modal" role="dialog" (click)="closeModal($event);" style="display: block; position: absolute;">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: #c56666; font-weight: bold;">Contact Details</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Name:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{name}}</span>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Designation:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{designation}}</span>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Email:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{email}}</span>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Age:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{age}}</span>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Phone number:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{phone_number}}</span>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-xs-6 col-sm-6">Status:</label>
+            <span class="col-md-6 col-xs-6 col-sm-6">{{status}}</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Close" class="btn float-right" (click)="close();" style="margin-left: 10px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
